@@ -127,7 +127,7 @@
 	#define CONFIG_SYS_SPL_OTA_ARGS_ADDR	CONFIG_SPL_OTA_BOOTARGS
 	#define CONFIG_BOOTX_BOOTARGS       	BOOTARGS_COMMON "ip=off init=/linuxrc rootfstype=cramfs root=/dev/mtdblock6 rw"
 	#undef  CONFIG_BOOTCOMMAND
-	#define CONFIG_BOOTCOMMAND    			"sf probe 0; sf read 0x80800000 0x40000 0x800000; bootm 0x80800000"
+	#define CONFIG_BOOTCOMMAND    			"sfcnor read 0x40000 0x800000 0x80800000; bootm 0x80800000"
 #endif	/* CONFIG_SPL_OS_BOOT */
 
 #define PARTITION_NUM 10
