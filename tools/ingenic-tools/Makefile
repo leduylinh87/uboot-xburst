@@ -147,8 +147,8 @@ endif
 $(obj)audio_div_values.h: $(obj)audio_params_creator.py
 	$(OBJTREE)/tools/ingenic-tools/audio_params_creator.py $(CONFIG_AUDIO_APLL) $(CONFIG_AUDIO_MPLL) > $(OBJTREE)/include/generated/$@
 
-$(obj)sfc_timing_val.h: $(obj)sfc_timing_params
-	        $(OBJTREE)/tools/ingenic-tools/sfc_timing_params > $(OBJTREE)/include/generated/$@
+#$(obj)sfc_timing_val.h: $(obj)sfc_timing_params
+#	        $(OBJTREE)/tools/ingenic-tools/sfc_timing_params > $(OBJTREE)/include/generated/$@
 
 $(obj)sfc_nand_params.h: $(obj)sfc_nand_params
 	$(OBJTREE)/tools/ingenic-tools/sfc_nand_params > $(OBJTREE)/include/generated/$@
@@ -196,9 +196,9 @@ $(obj)spl_params_fixer:	spl_params_fixer.c
 	$(HOSTCC) $(HOSTCFLAGS_NOPED) $(HOSTLDFLAGS) -o $@ $^
 	$(HOSTSTRIP) $@
 
-$(obj)sfc_timing_params: sfc_timing_params.c
-	$(HOSTCC) $(HOSTCFLAGS_NOPED) $(HOSTLDFLAGS) -o $@ $^
-	$(HOSTSTRIP) $@
+#$(obj)sfc_timing_params: sfc_timing_params.c
+#	$(HOSTCC) $(HOSTCFLAGS_NOPED) $(HOSTLDFLAGS) -o $@ $^
+#	$(HOSTSTRIP) $@
 
 $(obj)sfc_nand_params: nand_device/
 	make -C $<
@@ -211,8 +211,8 @@ clean:
 		$(TOPDIR)/board/$(BOARDDIR)/charge_logo/*.rle \
 		$(obj)*.o \
 		$(obj)ddr_params_creator \
-		$(obj)sfc_nand_params \
-		$(obj)sfc_timing_params
+		$(obj)sfc_nand_params
+#		$(obj)sfc_timing_params
 
 distclean:	clean
 
