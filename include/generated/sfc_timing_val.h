@@ -1,0 +1,8 @@
+#ifndef __SFC_TIMING_VAL_H__
+#define __SFC_TIMING_VAL_H__
+
+#define DEF_TIM_VAL           0x00001101
+#define CONFIG_SFC_TIMING_VAL 0x00001101
+#define CONFIG_SFC_DEV_CONF   0x00000001
+
+#endif
